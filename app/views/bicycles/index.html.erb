@@ -3,6 +3,10 @@
 <!-- ここから追加 -->
 <input id="address" type="textbox" value="GeekSalon">
 <input type="button" value="Encode" onclick="codeAddress()">
+ <%= button_tag "現在地から探す", :name => nil, class: "currentLocation" %>
+ <button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
 <!-- ここまで追加-->
 
 <div id='map'></div>
@@ -13,7 +17,23 @@
   width: 600px;
 }
 </style>
+<script>
+var x = document.getElementById("demo");
 
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+</script>
 <script>
 let map
 function initMap(){
@@ -48,5 +68,7 @@ function codeAddress(){
   });   
 }
 // ここまで追加 
+
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd0HjEkvdORg2mGfvCU4RX1xapeDLEUBQ&callback=initMap" async defer></script>
