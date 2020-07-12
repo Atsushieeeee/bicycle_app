@@ -1,18 +1,4 @@
-<h2>gmap</h2>
-
-<!-- ここから追加 -->
-<input id="address" type="textbox" value="GeekSalon">
-<input type="button" value="Encode" onclick="codeAddress()">
- <%= button_tag "現在地から探す", :name => nil, class: "currentLocation" %>
- <button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
- <%= button_tag "現在地から探す", :name => nil, class: "currentLocation" %>
- <button onclick="getLocation()">Try It</button>
-
- <button onclick="getPosition();">Find!!</button>
-
+test
 
 <div id='map'></div>
 
@@ -22,7 +8,8 @@
   width: 600px;
 }
 </style>
-<script>
+<%# <script>
+
     // 現在地取得処理
     function getPosition() {
       // 現在地を取得
@@ -57,9 +44,30 @@
         }
       );
     }
-  });   
+  </script> %>
+
+
+<script>
+let map
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  var lat = '<%== JSON.dump(@latitude) %>';
+  var lng = '<%== JSON.dump(@longitude) %>';
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat, lng},
+    zoom: 15,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat, lng},
+    map: map
+  });
 }
-// ここまで追加 
 
+</script>
 
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd0HjEkvdORg2mGfvCU4RX1xapeDLEUBQ&callback=initMap">
 </script>
