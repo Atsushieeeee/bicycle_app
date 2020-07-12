@@ -9,10 +9,11 @@ class BicyclesController < ApplicationController
     @places = Place.all.within(2, origin: [latitude, longitude])
   end
 
-  def create
-    @place = Place.new(place_params)
-    @place.address = @place.prefecture + @place.address_city
-    @place.address = @place.address.gsub(/\d+/, "").gsub(/\-+/, "")
-    @place.save
+  def search_location
+    latitude = params[:latitude].to_f
+    longitude = params[:longitude].to_f
+    @latitude = latitude
+    @longitude = longitude
+    @locations = Place.within_box(0.310686, latitude, longitude)
   end
 end
