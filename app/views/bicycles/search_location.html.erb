@@ -1,5 +1,5 @@
 test
-
+<%= include_gon %>
 <div id='map'></div>
 
 <style>
@@ -52,8 +52,9 @@ let map
 function initMap(){
   geocoder = new google.maps.Geocoder()
 
-  var lat = '<%== JSON.dump(@latitude) %>';
-  var lng = '<%== JSON.dump(@longitude) %>';
+  var lat = gon.lat;
+  var lng = gon.lng;
+  var location = gon.location
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat, lng},
@@ -61,7 +62,9 @@ function initMap(){
   });
 
   marker = new google.maps.Marker({
-    position:  {lat, lng},
+    // position: Shop.within(3, origin: {lat, lng}) 
+    position: location,
+    // position:  {lat, lng},
     map: map
   });
 }
