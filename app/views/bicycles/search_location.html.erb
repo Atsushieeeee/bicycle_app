@@ -50,23 +50,17 @@ function initMap() {
     infowindow.open(map);
     //マップの中心位置を指定
     map.setCenter(pos);
-    
-    
-    //種類（タイプ）やキーワードをもとに施設を検索（プレイス検索）するメソッド nearbySearch()
-    // service.nearbySearch({
-    //   location: pos,  //検索するロケーション
-    //   radius: 500,  //検索する半径（メートル）
-    //   type: ['parking']  //タイプで検索。文字列またはその配列で指定
-    //   //キーワードで検索する場合は name:'レストラン' や ['レストラン','中華'] のように指定
- 
-    // }, callback);  //コールバック関数（callback）は別途定義
+    // 現在位置をマップにマーカー表示
+    new google.maps.Marker({
+      map: map,
+      position: pos
+    });
 
-
-      service.textSearch({
-          location: pos,
-          radius: 500,
-          query: '駐輪場'
-      }, callback);
+    service.textSearch({
+        location: pos,
+        radius: 500,
+        query: '駐輪場'
+    }, callback);
 
  
     //コールバック関数には results, status が渡されるので、status により条件分岐
@@ -91,12 +85,19 @@ function initMap() {
   
   //マーカーを生成する関数（引数には検索結果の配列 results[i] が入ってきます）
   function createMarker(place) {
-    //var placeLoc = place.geometry.location; 
+    // var placeLoc = place.geometry.location; 
+    // 駐輪場のアイコン
+    var icon = {
+      url: "<%= image_path '4415.jpg' %>",
+      // size: new google.maps.Size(10, 10),
+      // origin: new google.maps.Point(0, 0),
+      // anchor: new google.maps.Point(0, 20)
+    };
     var marker = new google.maps.Marker({
       map: map,
-      position: place.geometry.location  //results[i].geometry.location
+      position: place.geometry.location,  //results[i].geometry.location
+      icon: icon
     });
-    
  
     //マーカーにイベントリスナを設定
     marker.addListener('click', function() {
