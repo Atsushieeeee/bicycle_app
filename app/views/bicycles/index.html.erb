@@ -1,1 +1,46 @@
- <%= link_to "現在地から探す", bicycles_search_location_path %>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="content-type" charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta property='og:type' content='webapp'>
+  <meta property='og:title' content='チャリトメ'>
+  <meta property='og:url' content='URLが入る'>
+  <meta property='og:description' content='チャリトメ'>
+  <meta name="description" content="周辺の駐輪場を検索するアプリです。" />
+  <title>チャリトメ</title>
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="main36-wrap">
+      <header>
+        <div class="header-wrap">
+          <div class="header-left">
+            <div class="site_title_header">
+              <img src="" alt="" width="150px" height="60px">
+            </div>
+          </div>
+        <div class="header-right">
+          <div class="header-right-info">
+          </div>
+        </div>
+      </header>
+        <%= link_to "現在地から探す", bicycles_search_location_path %>
+      <footer>
+        <div class="footer-wrap">
+          <div class="footer-info">
+            <small class="footer-text"> &copy; 2020 ATSUSHI All rights Reserved.</small>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
