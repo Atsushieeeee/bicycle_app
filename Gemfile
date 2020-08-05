@@ -63,3 +63,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'geokit-rails'
 gem 'geocoder'
 gem 'gon'
+gem 'font-awesome-rails'
