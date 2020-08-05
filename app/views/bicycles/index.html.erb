@@ -18,7 +18,7 @@
 
 <body>
   <main>
-    <div class="main36-wrap">
+    <div class="main-wrap">
       <header>
         <div class="header-wrap">
           <div class="header-left">
@@ -31,7 +31,9 @@
           </div>
         </div>
       </header>
-        <%= link_to "現在地から探す", bicycles_search_location_path %>
+        <%= link_to bicycles_search_location_path, class:'btn btn--orange btn-c' do%>
+        <i class="fa fas fa-envelope"></i>　現在地から探す
+        <%end%>
       <footer>
         <div class="footer-wrap">
           <div class="footer-info">
