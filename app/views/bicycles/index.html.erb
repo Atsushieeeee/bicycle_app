@@ -21,19 +21,22 @@
     <div class="main-wrap">
       <header>
         <div class="header-wrap">
-          <div class="header-left">
-            <div class="site_title_header">
-              <img src="" alt="" width="150px" height="60px">
-            </div>
-          </div>
-        <div class="header-right">
-          <div class="header-right-info">
+          <div class="site_title_header">
+            <%= image_tag 'header-logo.png', class:'header-logo' %>
           </div>
         </div>
       </header>
-        <%= link_to bicycles_search_location_path, class:'btn btn--orange btn-c' do%>
-        <i class="fa fas fa-envelope"></i>　現在地から探す
-        <%end%>
+      <div class="main-content">
+        <div class="main-image">
+          <%= image_tag 'logo.png', class:'main-logo' %>
+        </div>
+        <div class="main-btn">
+          <%= link_to bicycles_search_location_path, class:'btn btn-main btn-c' do%>
+          <i class="fas fa-bicycle"></i>　現在地から探す
+          <i class="fas fa-search-location"></i>
+          <%end%>
+        </div>
+      </div>
       <footer>
         <div class="footer-wrap">
           <div class="footer-info">
