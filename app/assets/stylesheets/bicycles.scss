@@ -170,3 +170,11 @@ a.btn-c i.fa {
   height: calc(100vh - 110px);
   width: 100vw;
 }
+
+@media screen and (max-width: 480px) {
+  .main-logo{
+    margin: 0 auto;
+    height: auto;
+    width: 320px;
+  }
+}  
