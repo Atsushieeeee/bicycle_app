@@ -50,5 +50,8 @@ test:
 production:
   <<: *default
   database: bicycle_app_production
-  username: bicycle_app
-  password: <%= ENV['BICYCLE_APP_DATABASE_PASSWORD'] %>
+  # username: bicycle_app
+  # password: <%= ENV['BICYCLE_APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
