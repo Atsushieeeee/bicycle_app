@@ -131,7 +131,7 @@ footer{
 }
 
 .main-image{
-  height: 400px;
+  height: 60vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -142,9 +142,18 @@ footer{
   margin: 0 auto;
 }
 
+.main-text{
+  height: 20vh;
+}
+
+.main-text p{
+  font-size: 12px;
+  text-align: center;
+}
+
 .main-btn{
   margin: 15px 0;
-  height: 100px;
+  height: 20vh;
   width: 100%;
 }
 
