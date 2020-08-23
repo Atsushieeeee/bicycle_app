@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta http-equiv="content-type" charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-  <meta property='og:type' content='webapp'>
-  <meta property='og:title' content='チャリトメ'>
-  <meta property='og:url' content='URLが入る'>
-  <meta property='og:description' content='チャリトメ'>
-  <meta name="description" content="周辺の駐輪場を検索するアプリです。" />
-  <title>チャリトメ</title>
-  <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
-  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-
 <body>
   <main>
     <div class="main-wrap">
       <header>
         <div class="header-wrap">
           <div class="site_title_header">
-            <%= image_tag 'header-logo.png', class:'header-logo' %>
+            <%= link_to image_tag('header-logo.png', class:'header-logo'), "/" %>
           </div>
         </div>
       </header>
       <div class="main-content">
         <div class="main-image">
           <%= image_tag 'logo.png', class:'main-logo' %>
+        </div>
+        <div class="main-text">
+          <p>このサイトでは位置情報を利用しています。</p><br>
+          <p>必ず位置情報をオンにして利用してください。</p>
         </div>
         <div class="main-btn">
           <%= link_to bicycles_search_location_path, class:'btn btn-main btn-c' do%>
@@ -47,4 +33,3 @@
     </div>
   </main>
 </body>
-</html>
